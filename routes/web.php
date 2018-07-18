@@ -16,13 +16,22 @@ Route::get('/', 'HomepageController@index');
 Auth::routes();
 
 
-
-
 Route::group(['middleware' => ['guest']], function () {
-    Route::get('/loginpage', function () {
+    Route::get('/loginpage', ['as' => 'myLoginRoute', function () {
         return view('login');
-    });
+    }]);
 });
+
+Route::group(['middleware' => ['auth']], function () {
+    Route::post('/addbook', 'BookContoller@store');
+});
+
+
+
+
+
+
+
 
 
 

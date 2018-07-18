@@ -12,12 +12,6 @@
     </div>
     <div class="navbar-links">
         <ul>
-            @guest
-
-            @else
-
-
-            @endguest
             <li class="navbar-login-btn">
                 <img class="profile-img" src="https://image.ibb.co/kw9Sby/person_flat.png"/>
                 <a href="{{ url('loginpage')}}">Log In</a>
@@ -158,7 +152,7 @@
                     @endif
 
                     <label for="email">{{ __('E-Mail Address') }}</label>
-                    <input id="email" type="email" class="form-control {{ $errors->has('email') ? ' is-invalid' : '' }}" name="email" value="{{ old('email') }}" required>
+                    <input id="emailSignup" type="email" class="form-control {{ $errors->has('email') ? ' is-invalid' : '' }}" name="email" value="{{ old('email') }}" required>
 
                     @if ($errors->has('email'))
                     <span class="invalid-feedback" role="alert">
@@ -167,7 +161,7 @@
                     @endif
 
                     <label for=>{{ __('Password') }}</label>
-                    <input id="password" type="password" class="form-control {{ $errors->has('password') ? ' is-invalid' : '' }}" name="password" required>
+                    <input id="passwordSignup" type="password" class="form-control {{ $errors->has('password') ? ' is-invalid' : '' }}" name="password" required>
 
                     @if ($errors->has('password'))
                     <span class="invalid-feedback" role="alert">

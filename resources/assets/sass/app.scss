@@ -446,7 +446,7 @@ hr {
     margin-left: 1vw;
 }
 
-#email, #password, #name, #password-confirm{
+#email, #password, #name, #password-confirm, .modal-addbook-input, #emailSignup, #passwordSignup {
     width: 100%;
     padding: 12px 20px;
     margin: 8px 0;
@@ -504,6 +504,84 @@ span.psw {
     color: $navbar-color !important;
     padding: 0.25rem 1.5rem !important;
 }
+
+// Add book modal
+
+.modal {
+    color: $main-font-color2
+}
+
+.modal-title {
+    font-weight: bold;
+}
+
+.modal-searchbook-btn, .modal-close-btn {
+    width: 48%;
+    color: $main-color1;
+    margin-top: 1vh;
+    height: 6vh;
+}
+
+.modal-searchbook-btn {
+    background-color: $main-color3;
+    float: left;
+}
+
+.modal-search-label {
+    font-size: 1rem;
+}
+
+.modal-close-btn {
+    background-color: $sidebar-color;
+    margin-left: 1vw;
+}
+
+.modal-content {
+    background-color: #fefefe;
+    margin: 10vh auto 0 auto; /* 5% from the top, 15% from the bottom and centered */
+    border: 1px solid #888;
+    width: 45vw;
+}
+
+#search-result-books {
+    height: 40vh;
+    overflow-y: scroll;
+    overflow-x: hidden;
+    display: flex;
+    flex-wrap: wrap;
+    flex-direction: row;
+    padding-top: 0 !important;;
+    align-items: normal;
+    justify-content: center;
+}
+
+.search-result-book-img {
+    height: 29vh;
+    width: 100%;
+}
+
+.search-result-book-item {
+    flex: 0 0 31%;
+    max-width: 31%;
+}
+
+.modal-addbook-btn {
+    width: 100%;
+    background-color: $main-color3;
+    color: $main-color1;
+    margin-top: 5px;
+    margin-bottom: 5px;
+}
+
+.modal-error-message {
+    float: right;
+    font-size: 1rem;
+    padding-right: 5px;
+}
+
+
+
+
 
 
 

@@ -18,15 +18,17 @@
                         <a class="dropdown-toggle" id="dropdownMenuButton" href="#" role="button" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false" v-pre>
                             {{ Auth::user()->name }} <span class="caret"></span>
                         </a>
-
                         <div class="dropdown-menu  dropdown-menu-right" aria-labelledby="dropdownMenuButton">
                             <a class="dropdown-item" href="{{ route('logout') }}"
                                onclick="event.preventDefault();
                                document.getElementById('logout-form').submit();">
                                 {{ __('Logout') }}
                             </a>
-                            <a class="dropdown-item" href="/profile">
+                            <a class="dropdown-item" href="/mybooks">
                                 Profile
+                            </a>
+                            <a class="dropdown-item" href="">
+                                My Books
                             </a>
                             <form id="logout-form" action="{{ route('logout') }}" method="POST" style="display: none;">
                                 @csrf
@@ -51,7 +53,34 @@
 @section('sidebar')
     <div class="col-2 left-sidebar">
         <div class="sidebar-add-book">
-            <a href="#" class="btn btn-add-book"><span class="fa fa-plus"></span>&ensp;ADD A BOOK</a>
+            <a href="#" class="btn btn-add-book" data-toggle="modal" data-target="#addBookModal"><span class="fa fa-plus"></span>&ensp;ADD A BOOK</a>
+        </div>
+
+        <!-- The Modal -->
+        <div class="modal fade" id="addBookModal" role="dialog">
+            <div class="modal-dialog modal-lg" role="document">
+                <div class="modal-content">
+                    <div class="modal-header">
+                        <h5 class="modal-title">Add New Book</h5>
+                        <button type="button" class="close" data-dismiss="modal" aria-label="Close">
+                            <span aria-hidden="true">&times;</span>
+                        </button>
+                    </div>
+                    <div class="modal-body">
+                        <form id="modal-addbook-form">
+                            @csrf
+                            <label class="modal-search-label" for="modal-addbook-input">Search:</label>
+                            <span class="modal-error-message"></span>
+                            <input class="modal-addbook-input" placeholder="book title, author, isbn..." required/>
+                            <button type="submit" class="btn modal-searchbook-btn">Search Book</button>
+                        </form>
+                        <button type="button" class="btn modal-close-btn" data-dismiss="modal">Close</button>
+                    </div>
+                    <div id="search-result-books" class="modal-footer">
+
+                    </div>
+                </div>
+            </div>
         </div>
         <hr class="sidebar-divider"/>
         <div class="sidebar-main-nav">
@@ -131,9 +160,9 @@
         <div class="main-content">
             @foreach ($books as $book)
             <div class="col-2 book-item">
-                <img class="img-fluid book-img" src="{{$book->image}}"/>
+                <img class="img-fluid book-img" src="{{$book->image_url}}"/>
                 <div class="book-info">
-                    <span class="book-name">{{$book->name}}</span></br>
+                    <span class="book-name">{{$book->title}}</span></br>
                     <span class="book-author">by {{$book->author}}</span></br>
                     <span class="book-isbn">isbn: {{$book->isbn}}</span>
                 </div>
