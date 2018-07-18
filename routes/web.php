@@ -11,6 +11,18 @@
 |
 */
 
-Route::get('/', function () {
-    return view('welcome');
+Route::get('/', 'HomepageController@index');
+
+Auth::routes();
+
+
+
+
+Route::group(['middleware' => ['guest']], function () {
+    Route::get('/loginpage', function () {
+        return view('login');
+    });
 });
+
+
+

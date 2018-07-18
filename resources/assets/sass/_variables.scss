@@ -1,8 +1,28 @@
 
-// Body
-$body-bg: #f5f8fa;
+// Colors
+$main-color1: #f5f8fa;
+$main-color2: #15a4fa;
+$main-color3: #f2795a;
+$sidebar-color: #1f2637;
+$navbar-color: #2f364a;
 
-// Typography
-$font-family-sans-serif: "Raleway", sans-serif;
-$font-size-base: 0.9rem;
-$line-height-base: 1.6;
+// Font colors
+$main-font-color2: #646a7c;
+$navbar-font-color: #919dbf;
+$book-name-font-color: #444c63;
+$book-author-font-color: #6f7d95;
+
+// Extra colors
+$divider-color: #19202e;
+$top-section-btn-color: #97b3ce;
+$top-section-border-color: #dadfea;
+$scrollbar-color: #ccd5e4;
+
+// Fonts
+@font-face {
+    font-family: ProximaNova;
+    src: url(../fonts/ProximaNova.otf);
+}
+
+// Bootstrap
+@import '~bootstrap/scss/bootstrap';

@@ -11,5 +11,11 @@ let mix = require('laravel-mix');
  |
  */
 
-mix.js('resources/assets/js/app.js', 'public/js')
-   .sass('resources/assets/sass/app.scss', 'public/css');
+mix.sass('resources/assets/sass/app.scss', 'public/css').sourceMaps();
+mix.js('resources/assets/js/app.js', 'public/js').sourceMaps();
+
+
+mix.browserSync('http://localhost:8000');
+
+mix.webpackConfig({ devtool: "inline-source-map" });
+

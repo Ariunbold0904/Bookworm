@@ -1,3 +1,8 @@
+/*
+
+Author: Ariunbold.J
+
+*/
 
 // Fonts
 @import url("https://fonts.googleapis.com/css?family=Raleway:300,400,600");
@@ -5,10 +10,526 @@
 // Variables
 @import "variables";
 
-// Bootstrap
-@import '~bootstrap/scss/bootstrap';
-
-.navbar-laravel {
-  background-color: #fff;
-  box-shadow: 0 2px 4px rgba(0, 0, 0, 0.04);
+//Pre-modelled css for inheritance
+%no-padding {
+    padding: 0;
 }
+
+%no-margin {
+    margin: 0;
+}
+
+// Mixins
+
+@mixin border-radius($radius) {
+    border-radius: $radius;
+    -webkit-border-radius: $radius;
+    -moz-border-radius: $radius;
+}
+
+
+// Home page
+
+body {
+    font-family: ProximaNova, sans-serif;
+}
+
+a:hover {
+    text-decoration: none;
+}
+
+// Main content section
+
+.main-section {
+    background-color: $main-color1;
+    color: $main-font-color2;
+    padding: 0 0vw 1vh 2vw;
+}
+
+.main-section {
+    max-width: 87%;
+    flex: 0 0 87% !important;
+}
+
+// Navbar
+
+.navbar-wrapper {
+    height: 48px;
+    width: 100%;
+    background-color: $navbar-color;
+    @extend %no-padding;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+}
+
+.navbar-links ul {
+    list-style-type: none;
+    margin: 0;
+    padding: 0;
+}
+
+.navbar-links li {
+    float:  right;
+    font-size: 1rem;
+}
+
+.navbar-links li a {
+    display: block;
+    padding: 13px 20px;
+    text-decoration: none;
+}
+
+.navbar-links li:first-child a {
+    color: $main-color1;
+    display: inline-block;
+    padding: 12.5px 12px;
+    margin-right: 0.5vw;
+}
+
+.navbar-links li:first-child a:hover {
+    cursor: pointer;
+    color: $main-color1;
+}
+
+.navbar-login-btn {
+    background-color: $main-color2;
+}
+
+.navbar-logo {
+    margin: 0 auto;
+    color: $navbar-font-color;
+
+}
+
+.navbar-links {
+    width: 40vw;
+    color: $navbar-font-color;
+}
+
+.navbar-title {
+    font-size: 1.2rem;
+}
+
+// Left sidebar section
+
+.left-sidebar {
+    background-color: $sidebar-color;
+    color: $main-color1;
+    font-family: ProximaNova, sans-serif !important;
+    font-size: 0.86em;
+}
+
+.left-sidebar {
+    max-width: 13% !important;
+}
+
+.main-section, .left-sidebar {
+    height: 88vh;
+    width: 100vw;
+    overflow: hidden;
+}
+
+.bg-dark {
+    background-color: $navbar-color !important;
+}
+
+.container-fluid {
+    padding: 0;
+}
+
+.row {
+     margin: 0;
+}
+
+.btn-add-book {
+    font-size: 0.8rem;
+    font-weight: bold;
+    background-color: $main-color3;
+    color: $main-color1;
+    width: 80%;
+    line-height: 4.2vh;
+}
+
+.btn-add-book:hover {
+    color: $main-color1;
+}
+
+.sidebar-add-book {
+    height: 16vh;
+    line-height: 16vh;
+    text-align: center;
+}
+
+.sidebar-main-nav {
+    height: 23vh;
+    color: $navbar-font-color;
+    padding: 10% 10% 0 15%;
+}
+
+.sidebar-categories {
+    padding: 10% 10% 0 15%;
+    height: 18vh;
+}
+
+
+.sidebar-categories li::before {
+    content: "•";
+}
+
+.red-bullet-color {
+    color: #e64c66;
+}
+
+.orange-bullet-color {
+    color: #ffab00;
+}
+.blue-bullet-color {
+    color: #00bfdd;
+}
+.purple-bullet-color {
+    color: #7874cf;
+}
+
+.sidebar-history-list {
+    height: 26vh;
+}
+
+.sidebar-main-nav ul {
+    list-style-type: none;
+}
+
+ul {
+    @extend %no-padding;
+    list-style: none;
+}
+
+a {
+    color: $navbar-font-color;
+    font-family: ProximaNova, sans-serif !important;
+    font-weight: 300;
+}
+
+.sidebar-history-list {
+    padding: 10% 10% 0 10%;
+}
+
+.sidebar-history-list .history-list-content {
+    font-family: ProximaNova, sans-serif !important;
+
+}
+
+.sidebar-history-list {
+    color: $navbar-font-color;
+}
+
+.history-list-icon {
+    width: 15%;
+    float: left;
+    padding-top: 0.7vh;
+}
+
+.history-list-content {
+    width: 78%;
+    float: left;
+    text-align: justify;
+}
+
+.my-history-item {
+    height: 100px;
+}
+
+a:hover {
+    color: inherit;
+}
+
+.my-nav-item {
+    padding-bottom: 0.6vh
+}
+
+.sidebar-history-list ul{
+    overflow: hidden;
+    //overflow-y: scroll;
+}
+
+.col-2 {
+    @extend %no-padding;
+}
+
+hr {
+    @extend %no-margin;
+}
+
+// Sidebar Divider
+
+.sidebar-divider {
+    height: 0.7vh;
+    background-color: $divider-color;
+}
+
+// Footer section
+
+.footer-section {
+    height: 43px;
+    background-color: $navbar-color !important;
+    @extend %no-padding
+}
+
+.footer-items-wrapper {
+    float: right;
+}
+
+.footer-item {
+    height: 100%;
+    width: 50px;
+    float:right;
+    line-height: 41px;
+    text-align: center;
+}
+
+.footer-help {
+    background-color: $sidebar-color;
+}
+
+.footer-settings {
+    background-color: $main-color2;
+}
+
+.footer-section {
+    .fas {
+        color: $main-color1 !important;
+    }
+}
+
+
+// Main Section
+
+.page-title {
+    font-weight: 600;
+    font-size: 1.3em !important;
+}
+
+.top-section {
+    height: 15vh;
+    padding: 2vh 0 0 0;
+    //border: black 1px solid;
+}
+
+.top-buttons-section {
+    border-top:  1px solid $top-section-border-color;
+    border-bottom:  1px solid $top-section-border-color;
+    margin-left: -10%;
+    padding-left: 10%;
+    margin-right: -10%;
+    padding-right: 10%;
+}
+
+.top-buttons-section, .search-section {
+    height: 7vh;
+    line-height: 7vh;
+}
+
+.top-buttons-section a {
+    font-size: 0.8rem;
+    padding: 0.150rem 0.75rem;
+    @include border-radius(1.2rem);
+}
+
+.top-btn-activated {
+    background-color: $top-section-btn-color;
+    color: $main-color1;
+}
+
+.search-section {
+    width: 28%;
+    float: right;
+    height: 4.4vh;
+    display: flex;
+    justify-content: center;
+    flex-direction: row;
+    margin-top: 1.3vh;
+}
+
+.form-control::placeholder {
+    color: $top-section-btn-color;
+    opacity: 1;
+    font-size: 0.8rem
+}
+
+.form-control {
+    padding: 0.15rem 0.75rem;
+    @include border-radius(1.2rem);
+}
+
+.search-input {
+    width: 88%;
+}
+
+.main-content {
+    height: 72vh;
+    overflow-y: scroll;
+    overflow-x: hidden;
+    padding-left: 0.7vw;
+    display: flex;
+    flex-wrap: wrap;
+    flex-direction: row;
+    margin-right: 0.3vw;
+}
+
+.col-2 {
+    max-width: 13%;
+}
+
+.book-item {
+    margin-right: 1vw;
+    float: left;
+}
+
+.book-info {
+    padding-top: 1vh;
+}
+
+.book-img {
+    height: 31vh;
+    width: 100%;
+}
+
+.book-name {
+    font-size: 1rem;
+    font-weight: bold;
+    color: $book-name-font-color;
+}
+
+.book-author, .book-isbn {
+    font-size: 0.9rem;
+    color: $main-font-color2
+}
+
+// Custom Scrollbar
+
+::-webkit-scrollbar {
+    width: 6px;
+}
+
+::-webkit-scrollbar-track {
+    background: $main-color1;
+}
+
+::-webkit-scrollbar-thumb {
+    background: $scrollbar-color;
+    @include border-radius(1.2rem);
+}
+
+.active {
+    color: $main-color1;
+}
+
+// Login Page
+
+.login-page {
+    max-width: 87%;
+    flex: 0 0 87% !important;
+    padding: 3.5rem;
+    height: 87vh;
+    overflow-y: scroll;
+    overflow-x: hidden;
+}
+
+.login-section, .signup-section {
+    padding-left: 2vw;
+    padding-right: 2vw
+}
+
+.profile-img {
+    width: 30px;
+    height: 30px;
+    margin-left: 1vw;
+}
+
+#email, #password, #name, #password-confirm{
+    width: 100%;
+    padding: 12px 20px;
+    margin: 8px 0;
+    border: 1px solid #ccc;
+    box-sizing: border-box;
+}
+
+.form-control {
+    @include border-radius(0);
+}
+
+.login-btn,.signup-btn {
+    background-color: $main-color2;
+    color: $main-color1;
+    padding: 14px 20px;
+    margin: 8px 0;
+    border: none;
+    cursor: pointer;
+    width: 100%;
+}
+
+.login-btn:hover {
+    opacity: 0.8;
+}
+
+.loginImgContainer {
+    text-align: center;
+    margin: 24px 0 12px 0;
+    position: relative;
+}
+
+img.avatar {
+    width: 10vw;
+    border-radius: 50%;
+}
+
+span.psw {
+    float: right;
+}
+
+.login-title, .signup-title {
+    font-size: 1.4rem;
+    font-weight: bold;
+}
+
+// Login Page dropdown menu
+
+.dropdown-item:active, .dropdown-item:hover {
+    color: $main-color1 !important;
+    text-decoration: none;
+    background-color: $main-color2;
+}
+
+.dropdown-item {
+    color: $navbar-color !important;
+    padding: 0.25rem 1.5rem !important;
+}
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
