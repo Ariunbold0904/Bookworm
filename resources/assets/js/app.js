@@ -92,7 +92,7 @@ $(document).ready(function(){
             },
             error: function(err) {
                 if(err.statusText==="Unauthorized"){
-                    $(".modal-error-message").html("Error: You can add book after login. <a href='/loginpage'>Cick here</a>");
+                    $(".modal-error-message").hide().html("Error: You can add book after login. <a href='/loginpage'>Cick here</a>").fadeIn(1500);;
                 }
             }
         });

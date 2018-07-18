@@ -17,14 +17,20 @@ Auth::routes();
 
 
 Route::group(['middleware' => ['guest']], function () {
-    Route::get('/loginpage', ['as' => 'myLoginRoute', function () {
+    Route::get('/loginpage', function () {
         return view('login');
-    }]);
+    });
 });
 
 Route::group(['middleware' => ['auth']], function () {
     Route::post('/addbook', 'BookContoller@store');
 });
+
+Route::get('/addbook', function () {
+    return redirect('/');
+});
+
+
 
 
 
