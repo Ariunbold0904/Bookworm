@@ -12,6 +12,10 @@
 ## After Book Added
 ![ss4](https://user-images.githubusercontent.com/28706051/42904494-d8a58390-8b07-11e8-9683-feab3bebdfe2.PNG)
 
+### Developed by Ariunbold.J
+### :email: ariuka.jagaa@gmail.com
+
+
 
 
 
